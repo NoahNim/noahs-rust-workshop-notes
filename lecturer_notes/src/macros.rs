@@ -32,11 +32,11 @@ Declarative macros perform textual substitution and are often used for code gene
 */
 
 macro_rules! create_function {
-    ($func_name:ident) => (
+    ($func_name:ident) => {
         fn $func_name() {
             println!("You called {:?}()", stringify!($func_name))
         }
-    )
+    };
 }
 
 // Use the above macro to create functions
@@ -63,7 +63,7 @@ pub fn main() {
     // Using built-in macros
     println!("Hello, {}", "macro"); // println! macro
     let _v = vec![1, 2, 3]; // vec! macro
-    // Point { x: 1, y: 2 }; // CustomDebug derive macro
+                            // Point { x: 1, y: 2 }; // CustomDebug derive macro
 
     // Using our own macros
     foo();

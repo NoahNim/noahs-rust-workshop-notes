@@ -28,7 +28,10 @@ impl Person {
     }
 
     pub fn print(&self) {
-        println!("The person's name is {} and age is {}.", self.name, self.age)
+        println!(
+            "The person's name is {} and age is {}.",
+            self.name, self.age
+        )
     }
 }
 
@@ -47,7 +50,10 @@ impl Color {
     }
 
     pub fn print(&self) {
-        println!("RGB values for black color are: {}, {}, {}", self.0, self.1, self.2)
+        println!(
+            "RGB values for black color are: {}, {}, {}",
+            self.0, self.1, self.2
+        )
     }
 }
 

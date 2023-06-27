@@ -25,7 +25,7 @@ enum Option<T> {
     Some(T),
 }
 
-impl<T> Option <T> {
+impl<T> Option<T> {
     fn unwrap(self) -> T {
         match self {
             Option::Some(val) => val,

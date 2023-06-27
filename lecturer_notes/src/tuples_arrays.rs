@@ -110,7 +110,7 @@ pub fn arrays() {
 
     // Just like with the vec macro, we can use shorthand to fill an array with repeating values:
 
-    let matx= [[0; 4]; 5];
+    let matx = [[0; 4]; 5];
     println!("{:?}", matx); // Prints: [0, 0, 0, 0]
 }
 

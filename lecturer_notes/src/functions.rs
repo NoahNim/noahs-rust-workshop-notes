@@ -38,9 +38,6 @@ fn closures() {
     let add_x = |a: i32| a + x;
 }
 
-
-
-
 pub fn main() {
     // Using regular functions
     say_hello();

@@ -103,12 +103,12 @@ pub fn main() {
 
     // Retain vector method:
     let mut numbers = vec![1, 2, 3, 4, 5];
-    println!("Vector before retain: {:?}", numbers);  // Output: [1, 2, 3, 4, 5]
+    println!("Vector before retain: {:?}", numbers); // Output: [1, 2, 3, 4, 5]
 
     // Retain only even numbers
     numbers.retain(|&x| x % 2 == 0);
 
-    println!("Vector after retain: {:?}", numbers);  // Output: [2, 4]
+    println!("Vector after retain: {:?}", numbers); // Output: [2, 4]
 
     /*
     Shorthand Vector Initializers:
@@ -121,5 +121,4 @@ pub fn main() {
     print!("vec: {:?}", vec1);
     let vec2 = vec!["hello"; 3];
     print!("vec: {:?}", vec2);
-
 }

@@ -108,83 +108,83 @@ You can also disable warnings for the entire file by adding the following line t
 
 // Okay, let's write some basic functions to get a feel for things.
 
-pub fn main() {
-    // macros: println!, format!, vec! etc.
+// pub fn main() {
+//     // macros: println!, format!, vec! etc.
 
-    // println!() is a macro that prints a string to the console.
-    println!("Hello, world!");
+//     // println!() is a macro that prints a string to the console.
+//     println!("Hello, world!");
 
-    // format!() is a macro that creates a String from a format string and a list of arguments.
-    let s = format!("Hello, world!");
-    println!("{}", s);
+//     // format!() is a macro that creates a String from a format string and a list of arguments.
+//     let s = format!("Hello, world!");
+//     println!("{}", s);
 
-    // vec![] is a macro that creates a Vec<T> from a list of items.
-    // Arrays in rust are not resizeable, but vectors are. Vectors are closer
-    // to the arrays/lists you are used to working with in javscript and python.
-    let mut v: Vec<i32> = vec![1, 2, 3];
-    println!("{:?}", v);
-    // now we add a new element to the vector
-    v.push(4);
-    println!("{:?}", v);
+//     // vec![] is a macro that creates a Vec<T> from a list of items.
+//     // Arrays in rust are not resizeable, but vectors are. Vectors are closer
+//     // to the arrays/lists you are used to working with in javscript and python.
+//     let mut v: Vec<i32> = vec![1, 2, 3];
+//     println!("{:?}", v);
+//     // now we add a new element to the vector
+//     v.push(4);
+//     println!("{:?}", v);
 
-    // Here is the syntax for ways to destructure different things in Rust
+//     // Here is the syntax for ways to destructure different things in Rust
 
-    // Destructuring a tuple:
-    let tuple: (i32, i32, i32) = (1, 2, 3);
-    let (a, b, c) = tuple;
-    println!("a: {}, b: {}, c: {}", a, b, c);
+//     // Destructuring a tuple:
+//     let tuple: (i32, i32, i32) = (1, 2, 3);
+//     let (a, b, c) = tuple;
+//     println!("a: {}, b: {}, c: {}", a, b, c);
 
-    // Desctructuring a struct:
-    struct Point {
-        x: i32,
-        y: i32,
-    }
+//     // Desctructuring a struct:
+//     struct Point {
+//         x: i32,
+//         y: i32,
+//     }
 
-    let point = Point { x: 1, y: 2 };
-    let Point { x: a, y: b } = point;
-    println!("a: {}, b: {}", a, b);
+//     let point = Point { x: 1, y: 2 };
+//     let Point { x: a, y: b } = point;
+//     println!("a: {}, b: {}", a, b);
 
-    // Destructuring an enum:
+//     // Destructuring an enum:
 
-    enum Color {
-        Red,
-        Green(i32),
-        Blue { alpha: f32, beta: f32 },
-    }
+//     enum Color {
+//         Red,
+//         Green(i32),
+//         Blue { alpha: f32, beta: f32 },
+//     }
 
-    let color = Color::Green(42);
-    match color {
-        Color::Red => println!("Red"),
-        Color::Green(value) => println!("Green: {}", value),
-        Color::Blue { alpha, beta } => println!("Blue: {}, {}", alpha, beta),
-    }
+//     let color = Color::Green(42);
+//     match color {
+//         Color::Red => println!("Red"),
+//         Color::Green(value) => println!("Green: {}", value),
+//         Color::Blue { alpha, beta } => println!("Blue: {}, {}", alpha, beta),
+//     }
 
-    // Array destructuring:
+//     // Array destructuring:
 
-    let array = [1, 2, 3];
-    let [a, b, c] = array;
-    println!("a: {}, b: {}, c: {}", a, b, c);
+//     let array = [1, 2, 3];
+//     let [a, b, c] = array;
+//     println!("a: {}, b: {}, c: {}", a, b, c);
 
-    // Vector destructuring: must be handled as a slice, and due to Rust's strictness with handling uncertainty with
-    // variables that may or not be there, we need to do it like this...
+//     // Vector destructuring: must be handled as a slice, and due to Rust's strictness with handling uncertainty with
+//     // variables that may or not be there, we need to do it like this...
 
-    let vec = vec![1, 2, 3];
-    if let [first, second, third] = vec.as_slice() {
-        println!("first: {}, second: {}, third: {}", first, second, third);
-    } else {
-        println!("Unable to destructure Vec.");
-    }
+//     let vec = vec![1, 2, 3];
+//     if let [first, second, third] = vec.as_slice() {
+//         println!("first: {}, second: {}, third: {}", first, second, third);
+//     } else {
+//         println!("Unable to destructure Vec.");
+//     }
 
-    //  Slice destructuring
-    let slice = &[1, 2, 3];
-    let [a, rest @ ..] = slice;
-    println!("a: {}", a);
-    for item in rest {
-        println!("{}", item);
-    }
+//     //  Slice destructuring
+//     let slice = &[1, 2, 3];
+//     let [a, rest @ ..] = slice;
+//     println!("a: {}", a);
+//     for item in rest {
+//         println!("{}", item);
+//     }
 
-    // Reference destructuring.
-    let value = &42;
-    let &x = value;
-    println!("x: {}", x);
-}
+//     // Reference destructuring.
+//     let value = &42;
+//     let &x = value;
+//     println!("x: {}", x);
+// }

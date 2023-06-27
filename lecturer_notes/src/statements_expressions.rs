@@ -22,8 +22,7 @@ Expressions:
 */
 // Not only will loop evaluate to 1, but this function will also return 1 any time it is called! 🤯 🤯 🤯
 fn what_trickery_is_this() {
-
-    let x= loop{
+    let x = loop {
         break 1;
     };
     println!("x: {}", x);
@@ -45,7 +44,6 @@ Control flow expressions:
 
     - The value of a 'loop' expression is defined by a 'break' statement with a value.
 */
-
 
 pub fn main() {
     // An arithmetic expression:
