@@ -13,6 +13,25 @@ macros: println!(), format!(), vec![], etc.
      a Vec<T> from a list of items. A Vec is a growable array. We will cover these in more
     detail later.
 
+*/
+
+fn macros_func() {
+    let x: i32 = 4;
+    let y: i32 = 3;
+    // println macro
+    println!("Hello World: {}, {}", x, y);
+
+    // two ways of format macro
+    // let stringy_thing1 = format!("The value of x is: {}", x);
+    // let stringy_thing2 = format!("The value of x is: {x}");
+
+    // vec macro
+    // Vector. Vectors in Rust need the same type.
+    let vecky: Vec<i32> = [1, 2, 3].to_vec(); // you can't put a string in here
+    println!("{vecky:?}");
+}
+
+/*
 functions: fn main() {}, fn hello() -> String {}, etc.
 
     - Functions that return a value have a return type specified after the ->. Functions that
@@ -90,7 +109,22 @@ constants: const X: i32 = 5, etc.
       Constants are always statically scoped. This means that they are valid for the entire time
       that the program is running. The name of constant should be SCREAMING_SNAKE_CASE. We will
       cover constants in more detail later.
+*/
 
+pub const MY_CONST_VAR: i32 = 50;
+
+fn variables_func() {
+    // let x: i32 = 6;
+    println!("{MY_CONST_VAR}");
+
+    let mut y: f64 = 12.0;
+    println!("{y}");
+
+    y = 13.0;
+    println!("{y}");
+}
+
+/*
 code comments: //, /* */, etc.
 
     - comments in rust are similar to comments in other languages. They are used to document code.
@@ -109,5 +143,6 @@ You can also disable warnings for the entire file by adding the following line t
 // Okay, let's write some basic functions to get a feel for things.
 
 pub fn main() {
-
+    macros_func();
+    variables_func();
 }
