@@ -15,7 +15,6 @@ Basic Numeric Types:
       most commonly used ones.
 */
 
-
 /*
 Basic String Types:
 
@@ -60,7 +59,17 @@ Basic String Types:
     `.to_string()`, and `.to_owned()` produce a `String` type, while string literals (`&str`) are naturally string slices.
 */
 
+fn strings() {
+    let x: i32 = 5;
+    // let y: i32 = x;
 
+    fn num_func(x: &i32) {
+        println!("{}", x);
+    }
+
+    num_func(&x);
+    println!("{}", x)
+}
 
 /*
 Basic Compound Types:
@@ -85,17 +94,13 @@ Basic Compound Types:
         arguments.
 */
 
-
-
 /*
     -   Enum: It is a user-defined type that can contain multiple variants. Enums are useful when
         you want to represent a value that can have different states or options. Each variant
         can have its own associated data.
 */
 
-
 // Associating data to each variant of an enum.
-
 
 /*
     -   Tuple: It is a type that can hold multiple values of different types. Tuples are ordered
@@ -103,8 +108,6 @@ Basic Compound Types:
         than 2-3 values, it is recommended to use a struct instead.
 
 */
-
-
 
 /*
 The option type:
@@ -118,7 +121,6 @@ The option type:
     Useful when needing to work with optional data.
 */
 
-
 /*
 Note on References:
     -   The '&' symbol in front of a type indicates that it is a reference. References are
@@ -128,5 +130,47 @@ Note on References:
 */
 
 pub fn main() {
+    #[derive(Debug)]
+    struct Pet {
+        name: String,
+        pet_type: String,
+    }
 
+    // Here is where we define the Humam type
+    #[derive(Debug)]
+    struct Human {
+        name: String,
+        age: i32,
+        pets: Vec<Pet>,
+    }
+
+    // This is to make a type like Human behave as a class
+    impl Human {
+        fn new(name: String, age: i32, pets: Vec<Pet>) -> Self {
+            // Constructor
+            Self { name, age, pets }
+        }
+    }
+
+    let hades: Pet = Pet {
+        name: "Hades".to_string(),
+        pet_type: "Doberman".to_owned(),
+    };
+
+    let meowsy: Human = Human {
+        name: String::from("Meowsy Meowsikin"),
+        age: 9000,
+        pets: vec![hades],
+    };
+
+    let matilda: Human = Human::new(
+        "Matilda Meowsikin".to_string(),
+        8052,
+        vec![Pet {
+            name: "Lisa".to_string(),
+            pet_type: "beta fish".to_string(),
+        }],
+    );
+
+    println!("{:?}, {:?}", meowsy, matilda);
 }
