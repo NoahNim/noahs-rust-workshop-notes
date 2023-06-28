@@ -11,4 +11,5 @@ fn main() {
     // rust_basics::main();
     // data_types::main();
     // rust_nuances::main();
+    examples::lemonade_stand::main();
 }
